@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-<p>現在地は{{count}}です</p>
+<p>現在値は{{count}}です</p>
 <input type="button" @click="onclick" value="増やす">
 </div>
 </template>

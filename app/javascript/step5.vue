@@ -6,14 +6,14 @@
   </select>
   <input type="text" class="form-Control" v-model="size"><br>
   <img src="http://wings.msn.to/image/wings.jpg" v-bind:[attr]="size">
-  <Increment></Increment>
+  <Increment class="mt-3"></Increment>
 </div>
 </template>
 
 <script>
 import Increment from './component/increment.vue'
 export default {
-    components:Increment,
+    components: {Increment},
     data: function(){
     return {
       attr:'width',

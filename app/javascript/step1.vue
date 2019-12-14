@@ -4,6 +4,7 @@
   <button @click="onclick">クリック</button>
     <p>{{ date }}</p>
     <img :src="path" alt="ロゴ画像" @mouseover="mouse1" @mouseleave="mouse2" />
+
 </div>
 </template>
 
@@ -14,6 +15,7 @@ export default {
       message: "Hello Vue!!",
       date: "",
       path:'http://www.web-deli.com/image/linkbanner_l.gif',
+
     }
   },
     methods: {
@@ -25,7 +27,7 @@ export default {
     },
     mouse2: function(){
       this.path = 'http://www.web-deli.com/image/linkbanner_l.gif';
-    }
+    },
   }
 }
 </script>

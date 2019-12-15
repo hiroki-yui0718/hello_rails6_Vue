@@ -23,7 +23,10 @@ require("trix")
 require("@rails/actiontext")
 
 import Vue from 'vue'
-import router from '../router/router'
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/ja'
+import 'element-ui/lib/theme-chalk/index.css'
+import router1 from '../router/router'
 import store1  from '../store/store'
 import Step1 from '../step1.vue'
 import Step2 from '../step2.vue'
@@ -36,10 +39,16 @@ import Clear from '../component/keyclear.vue'
 import Position from '../component/position.vue'
 import Increment from '../component/increment.vue'
 import Carousel from '../component/carousel.vue'
+import Calendar from '../component/calendar.vue'
 import Books from '../vuex-books/app.vue'
 import store2  from '../vuex-books/store'
 import Time  from '../vuex-module/app.vue'
 import store3  from '../vuex-module/store'
+import Read from '../reading-recorder/app'
+import store4 from '../reading-recorder/store'
+import router2 from '../reading-recorder/router'
+
+Vue.use(ElementUI, {locale})
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
@@ -51,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }).$mount('#step2')
 
   new Vue({
-    router,
+    router:router1,
     el: '#step3',
     render: h => h(Step3)
   })
@@ -97,5 +106,15 @@ document.addEventListener("DOMContentLoaded", () => {
     store:store3,
     el:'#times',
     render: h => h(Time)
+  })
+  new Vue({
+    router:router2,
+    store:store4,
+    el:'#read',
+    render: h => h(Read)
+  })
+  new Vue({
+    el:'#calendar',
+    render: h => h(Calendar)
   })
 })

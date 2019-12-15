@@ -16,7 +16,8 @@
          <input type="text" key="bank">
     </div>
 </fieldset>
-<router-link to="position"></router-link>
+<router-view></router-view>
+<router-view class="mt-5" name="slide"></router-view>
 </div>
 </template>
 

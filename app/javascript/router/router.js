@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Position from '../component/position.vue'
+import Slide from '../component/slide.vue'
 
 Vue.use(Router)
 
@@ -11,7 +12,10 @@ export default new Router({
     {
       path: '/home/step3',
       name:'position',
-      component: Position
+      components:{ 
+        default: Position,
+        slide: Slide
+      }
     },
   ]
 })

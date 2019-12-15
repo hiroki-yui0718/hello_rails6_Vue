@@ -16,6 +16,7 @@
          <input type="text" key="bank">
     </div>
 </fieldset>
+<router-link to="position"></router-link>
 </div>
 </template>
 

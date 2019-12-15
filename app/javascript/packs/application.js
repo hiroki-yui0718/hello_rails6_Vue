@@ -23,15 +23,23 @@ require("trix")
 require("@rails/actiontext")
 
 import Vue from 'vue'
-import router from './router'
+import router from '../router/router'
+import store1  from '../store/store'
 import Step1 from '../step1.vue'
 import Step2 from '../step2.vue'
 import Step3 from '../step3.vue'
 import Step4 from '../step4.vue'
 import Step5 from '../step5.vue'
+import Step6 from '../step6.vue'
+import Step7 from '../step7.vue'
 import Clear from '../component/keyclear.vue'
 import Position from '../component/position.vue'
 import Increment from '../component/increment.vue'
+import Carousel from '../component/carousel.vue'
+import Books from '../vuex-books/app.vue'
+import store2  from '../vuex-books/store'
+import Time  from '../vuex-module/app.vue'
+import store3  from '../vuex-module/store'
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
@@ -56,6 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
     render: h => h(Step5)
   })
   new Vue({
+    el: '#step6',
+    render: h => h(Step6)
+  })
+  new Vue({
     el: '#clear',
     render: h => h(Clear)
   })
@@ -67,4 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
      el:'#increment',
      render: h => h(Increment)
    })
+   new Vue({
+    el:'#carousel',
+    render: h => h(Carousel)
+  })
+  new Vue({
+    store:store1,
+    el:'#step7',
+    render: h => h(Step7)
+  })
+  new Vue({
+    store:store2,
+    el:'#books',
+    render: h => h(Books)
+  })
+  new Vue({
+    store:store3,
+    el:'#times',
+    render: h => h(Time)
+  })
 })

@@ -4,13 +4,16 @@
     <title>HelloRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+    <link rel="stylesheet"
+  href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
   </head>
   <body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <div class="container">
     <%= yield %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    </div>
+  </div>
   </body>
 </html>

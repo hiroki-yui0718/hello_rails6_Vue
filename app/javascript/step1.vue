@@ -4,7 +4,6 @@
   <button @click="onclick">クリック</button>
     <p>{{ date }}</p>
     <img :src="path" alt="ロゴ画像" @mouseover="mouse1" @mouseleave="mouse2" />
-
 </div>
 </template>
 

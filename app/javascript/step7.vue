@@ -7,21 +7,22 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
     computed:{
       count(){
         return this.$store.state.count
       }
     },
-    methods: {
-      minus(){
-        this.$store.commit('minus')
-      },
-      plus(){
-        this.$store.commit('plus')
-      }
+    methods: mapMutations(['plus','minus'])
+      // minus(){
+      //   this.$store.commit('minus')
+      // },
+      // plus(){
+      //   this.$store.commit('plus')
+      // }
 
-    }
+    
 
 }
 </script>

@@ -33,13 +33,14 @@
 </template>
 
 <script>
-export default {
-  computed:{
-    booksCount(){ //値の取り出し
-      return this.$store.getters.booksCount;
-    }
+import {mapState} from 'vuex'
 
-  },
+export default {
+  computed:
+    // booksCount(){ //値の取り出し
+    //   return this.$store.getters.booksCount;
+    // }
+    mapState(['booksCount','getBooksByPrice']),
     data: function(){
       return{
         isbn: '',

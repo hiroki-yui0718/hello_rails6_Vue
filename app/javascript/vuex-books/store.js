@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import {ADD_BOOK} from './mutation-types'
 export default new Vuex.Store({
   state: { //初期の値
     books: [
@@ -44,9 +45,10 @@ export default new Vuex.Store({
         
     }
   },
-  mutations:{ //データに変化を与える所
-      addBook(state,payload){
+  mutations:{
+    [ADD_BOOK](state,payload){
         state.books.push(payload.book)
       }
+    
   }
 })

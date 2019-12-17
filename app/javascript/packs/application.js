@@ -49,6 +49,7 @@ import store4 from '../reading-recorder/store'
 import router2 from '../reading-recorder/router'
 
 Vue.use(ElementUI, {locale})
+Vue.prototype.$http = (url, opts) => fetch(url, opts)
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({

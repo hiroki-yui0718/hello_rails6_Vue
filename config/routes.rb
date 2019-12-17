@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "home/vuex-books" => "home#vuex-books"
   get "home/vuex-module" => "home#vuex-module"
-  get "home/reading-recorder" => "home#reading-recorder"
+  get "recorder" => "recorder#index"
+  get "recorder/search" => "recorder#search"
   root 'messages#index'
 end

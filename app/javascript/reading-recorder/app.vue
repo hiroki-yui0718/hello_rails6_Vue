@@ -1,6 +1,6 @@
 <template><div id="app">
 <h2 class="p-3">Reading Recoder</h2>
-<el-menu :default-active="activeIndex2"
+<el-menu 
   class="el-menu-demo"
   mode="horizontal"
   background-color="#545c64"

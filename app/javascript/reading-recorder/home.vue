@@ -24,7 +24,7 @@ export default {
     computed:mapGetters(['bookCount','getRangeByPage']),
     components:{BookInfo},
     methods:{
-      onchange(page){
+      onchange:function(page){
         this.books = this.getRangeByPage(page)
       }
     },

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './home.vue'
+import BookForm from './bookForm.vue'
 import BookSearch from './bookSearch.vue'
 
 Vue.use(Router)
@@ -19,9 +20,10 @@ export default new Router({
             name:"search",
             component: BookSearch
         },
-        {   path:"*",
-            redirect:'/recorder'
+        {   path:"/recorder/form",
+            name:"form",
+            component: BookForm
 
-        }
+        },
     ]
 })

@@ -53,9 +53,9 @@ Vue.prototype.$http = (url, opts) => fetch(url, opts)
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
-    el: '#step1',
     render: h => h(Step1)
-  })
+  }).$mount('#step1')
+
   new Vue({
     render: h => h(Step2)
   }).$mount('#step2')

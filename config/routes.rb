@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get "home/vuex-module" => "home#vuex-module"
   get "recorder" => "recorder#index"
   get "recorder/search" => "recorder#search"
+  get "recorder/form" => "recorder#form"
   root 'messages#index'
 end

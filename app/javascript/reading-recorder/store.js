@@ -6,7 +6,7 @@ import {UPDATE_CURRENT,UPDATE_BOOK} from './mutation-types'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    strict:true,
+    strict:true, //厳格モード
     state:{
         books:[],
         current:null,
@@ -40,8 +40,10 @@ export default new Vuex.Store({
         [UPDATE_BOOK](state,payload){
             let b = this.getters.getBookById(payload.id)
             if(b){
+                //UPDATE
                 Object.assign(b,payload)
             }else{
+                //INSERT
                 state.books.push(payload) //実際にコミットするのはvueなのでpayloadを適当にコミットすればいい
             }
         },

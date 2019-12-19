@@ -16,16 +16,18 @@
     <el-button>Cancel</el-button>
   </el-form-item>
   </el-form>
-  <ul v-if="form">
-    <li>{{form.date}}<br></li>
-    <li>{{form.desc}}</li>
+     <p class="mt-3">{{formCount}}件のメッセージが登録されています。</p>
+  <ul v-for="(f,index) in allForm" :key="index">
+    <li>No. {{index + 1}}</li>
+    <li style="list-style-type: none;">{{f.date}}</li>
+    <li style="list-style-type: none;">{{f.desc}}</li>
 </ul>
 </div>
 </template>
 
 <script>
 import { UPDATE_FORM } from './mutation-types';
-import { mapActions } from 'vuex';
+import { mapActions,mapGetters } from 'vuex';
 export default {
     data:function() {
       return {
@@ -54,7 +56,6 @@ export default {
             }
           }]
         },
-        index:Number,
         form:{
             date:"",
             desc:"",
@@ -63,11 +64,14 @@ export default {
         
       }
     },
+    computed:mapGetters(['formCount','allForm']),
     methods:{
         ...mapActions([UPDATE_FORM]),
         onSubmit:function(){
             this[UPDATE_FORM](this.form)
-        }
+            this.form.date=new Date()
+            this.form.desc =""
+            }
     },
 
 }

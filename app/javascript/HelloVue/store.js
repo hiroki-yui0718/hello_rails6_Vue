@@ -10,6 +10,14 @@ export default new Vuex.Store({
     state:{
         form:[],
     },
+    getters:{
+        formCount(state){
+            return state.form.length
+        },
+        allForm(state){
+            return state.form
+        },
+    },
     mutations:{
         [UPDATE_FORM](state,payload){
             state.form.push(payload)

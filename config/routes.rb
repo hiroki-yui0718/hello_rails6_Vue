@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get "recorder" => "recorder#index"
   get "recorder/search" => "recorder#search"
   get "recorder/form" => "recorder#form"
+  get "/vue" => "vue#index"
   root 'messages#index'
 end

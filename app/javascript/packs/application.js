@@ -26,6 +26,8 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-ui/lib/theme-chalk/index.css'
+// import Vuesax from 'vuesax'
+// import 'vuesax/dist/vuesax.css'
 import router1 from '../router/router'
 import store1  from '../store/store'
 import Step1 from '../step1.vue'
@@ -47,7 +49,11 @@ import store3  from '../vuex-module/store'
 import Read from '../reading-recorder/app'
 import store4 from '../reading-recorder/store'
 import router2 from '../reading-recorder/router'
+import HelloVue from '../HelloVue/app.vue'
+import router3 from '../HelloVue/router'
+import store5 from '../HelloVue/store'
 
+// Vue.use(Vuesax)
 Vue.use(ElementUI, {locale})
 Vue.prototype.$http = (url, opts) => fetch(url, opts)
 
@@ -117,5 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
   new Vue({
     el:'#calendar',
     render: h => h(Calendar)
+  })
+  new Vue({
+    router:router3,
+    store:store5,
+    el:'#helloVue',
+    render: h => h(HelloVue)
   })
 })

@@ -25,9 +25,12 @@ export default new Vuex.Store({
 
    },
    actions:{
-    [UPDATE_FORM]({commit},payload){
-        commit(UPDATE_FORM,payload)
-    },
+    [UPDATE_FORM](data){
+        firebase.database().ref('memo').push({
+            date: data.name,
+            desc: data.desc,
+          });
+        }
    },
    plugins:[createPersistedState({
     key : 'reading-recorder',

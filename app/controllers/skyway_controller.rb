@@ -1,0 +1,2 @@
+class SkywayController < ApplicationController
+end

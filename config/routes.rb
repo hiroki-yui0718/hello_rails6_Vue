@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "recorder/search" => "recorder#search"
   get "recorder/form" => "recorder#form"
   get "/vue" => "vue#index"
+  get "/skyway" => "skyway#index"
   root 'messages#index'
 end

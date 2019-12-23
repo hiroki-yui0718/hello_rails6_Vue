@@ -26,8 +26,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-ui/lib/theme-chalk/index.css'
-// import Vuesax from 'vuesax'
-// import 'vuesax/dist/vuesax.css'
+import firebase from 'firebase'
 import router1 from '../router/router'
 import store1  from '../store/store'
 import Step1 from '../step1.vue'
@@ -52,10 +51,22 @@ import router2 from '../reading-recorder/router'
 import HelloVue from '../HelloVue/app.vue'
 import router3 from '../HelloVue/router'
 import store5 from '../HelloVue/store'
+import SkyWay from '../skyWay/home.vue'
 
-// Vue.use(Vuesax)
 Vue.use(ElementUI, {locale})
 Vue.prototype.$http = (url, opts) => fetch(url, opts)
+const config = {
+  apiKey: "AIzaSyDbrFniWhJaLBYFYJJ6sR6UxepWeMnFl2E",
+  authDomain: "hellovue-e73ea.firebaseapp.com",
+  databaseURL: "https://hellovue-e73ea.firebaseio.com",
+  projectId: "hellovue-e73ea",
+  storageBucket: "hellovue-e73ea.appspot.com",
+  messagingSenderId: "204060488592",
+  appId: "1:204060488592:web:38626535a1b06d4480f915",
+  measurementId: "G-HK5Z9EY7CB"
+}
+
+firebase.initializeApp(config)
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
@@ -130,4 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
     el:'#helloVue',
     render: h => h(HelloVue)
   })
+  new Vue({
+    el:'#skyWay',
+    render: h => h(SkyWay)
+  }
+  )
 })

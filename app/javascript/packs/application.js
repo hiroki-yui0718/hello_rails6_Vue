@@ -26,7 +26,7 @@ import Vue from 'vue'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-ui/lib/theme-chalk/index.css'
-import firebase from 'firebase'
+import './firebase'
 import router1 from '../router/router'
 import store1  from '../store/store'
 import Step1 from '../step1.vue'
@@ -55,18 +55,6 @@ import SkyWay from '../skyWay/home.vue'
 
 Vue.use(ElementUI, {locale})
 Vue.prototype.$http = (url, opts) => fetch(url, opts)
-const config = {
-  apiKey: "AIzaSyDbrFniWhJaLBYFYJJ6sR6UxepWeMnFl2E",
-  authDomain: "hellovue-e73ea.firebaseapp.com",
-  databaseURL: "https://hellovue-e73ea.firebaseio.com",
-  projectId: "hellovue-e73ea",
-  storageBucket: "hellovue-e73ea.appspot.com",
-  messagingSenderId: "204060488592",
-  appId: "1:204060488592:web:38626535a1b06d4480f915",
-  measurementId: "G-HK5Z9EY7CB"
-}
-
-firebase.initializeApp(config)
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({

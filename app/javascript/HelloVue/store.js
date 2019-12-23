@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {UPDATE_FORM} from './mutation-types'
-import createPersistedState from 'vuex-persistedstate'
+// import createPersistedState from 'vuex-persistedstate'
+import {db} from '../packs/firebase'
 
 Vue.use(Vuex)
 
+
 export default new Vuex.Store({
-   
     state:{
         form:[],
     },
@@ -15,6 +16,7 @@ export default new Vuex.Store({
             return state.form.length
         },
         allForm(state){
+            db.ref('memo').on('value',  snapshot => console.log(snapshot.val()));
             return state.form
         },
     },
@@ -25,15 +27,14 @@ export default new Vuex.Store({
 
    },
    actions:{
-    [UPDATE_FORM](data){
-        firebase.database().ref('memo').push({
-            date: data.name,
-            desc: data.desc,
-          });
+    [UPDATE_FORM]({commit},data){
+        console.log(data.date)
+        console.log(data.desc)
+         db.ref('memo').push(data)
         }
    },
-   plugins:[createPersistedState({
-    key : 'reading-recorder',
-    storage:localStorage
-})]
+//    plugins:[createPersistedState({
+//     key : 'reading-recorder',
+//     storage:localStorage
+// })]
 })

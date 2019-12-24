@@ -32,7 +32,7 @@
     <li style="list-style-type: none;">{{f.desc}}</li>
     </div>
     <div class="col-md-2">
-      <el-button @click="onDelete(f)" icon="el-icon-circle-close" circle></el-button>
+      <el-button @click="onDelete(f.desc)" icon="el-icon-circle-close" circle></el-button>
     </div>
     </div>
 </ul>
@@ -41,7 +41,7 @@
 
 <script>
 import {db} from '../packs/firebase'
-import { UPDATE_FORM } from './mutation-types';
+import { UPDATE_FORM,DELETE_FORM } from './mutation-types';
 import { mapActions,mapGetters } from 'vuex';
 export default {
     data:function() {
@@ -57,23 +57,14 @@ export default {
     },
     computed:mapGetters(['formCount','allForm']),
     methods:{
-        ...mapActions([UPDATE_FORM]),
+        ...mapActions([UPDATE_FORM,DELETE_FORM]),
         onSubmit:function(){
           this[UPDATE_FORM](this.form)
           this.form.date = ""
           this.form.desc=""
         },
         onDelete:function(data){
-          db.ref("memo").on("value", function(snapshot) {
-          snapshot.forEach(function(children) {
-        //children.val().userIdとかで必要な値を取ればOK
-            console.log(children.val().desc)
-            console.log(children.val())
-          //db.ref('memo').child('-LReyNSJ3rS9gi2tFfNk').remove();
-           });
-          });  
-
-           
+          this[DELETE_FORM](data)
         }
     },
 }

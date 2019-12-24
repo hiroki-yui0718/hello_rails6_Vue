@@ -43,7 +43,7 @@ export default new Vuex.Store({
                 //UPDATE
                 Object.assign(b,payload)
             }else{
-                //INSERT
+                //配列
                 state.books.push(payload) //実際にコミットするのはvueなのでpayloadを適当にコミットすればいい
             }
         },

@@ -12,24 +12,29 @@ export default new Vuex.Store({
         form:[],
     },
     getters:{
+        allForm(state){
+            db.ref('memo').on('value', snapshot => { // eslint-disable-line
+                if (snapshot) {
+                    const rootList = snapshot.val();
+                    state.form.length = 0
+                    Object.keys(rootList).forEach((val, key) => {
+                      state.form.push(rootList[val]);
+                    })
+                  }
+                })
+                return state.form
+        },
         formCount(state){
             return state.form.length
-        },
-        allForm(state){
-            db.ref('memo').on('value',  snapshot => console.log(snapshot.val()));
-            return state.form
-        },
+        }
     },
     mutations:{
         [UPDATE_FORM](state,payload){
             state.form.push(payload)
         },
-
    },
    actions:{
     [UPDATE_FORM]({commit},data){
-        console.log(data.date)
-        console.log(data.desc)
          db.ref('memo').push(data)
         }
    },

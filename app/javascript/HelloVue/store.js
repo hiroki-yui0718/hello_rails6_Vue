@@ -10,6 +10,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         form:[],
+        list:[]
     },
     getters:{
         allForm(state){
@@ -26,6 +27,12 @@ export default new Vuex.Store({
         },
         formCount(state){
             return state.form.length
+        },
+        allDesc(state){
+            state.form.some( function( value, index, array ) {
+                state.list.push(value['desc'])
+            });
+            return state.list
         }
     },
     mutations:{

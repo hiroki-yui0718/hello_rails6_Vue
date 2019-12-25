@@ -27,6 +27,9 @@ import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-ui/lib/theme-chalk/index.css'
 import './firebase'
+import { CoolSelect } from 'vue-cool-select'
+import 'vue-cool-select/dist/themes/bootstrap.css'
+import 'vue-cool-select/dist/themes/material-design.css'
 import router1 from '../router/router'
 import store1  from '../store/store'
 import Step1 from '../step1.vue'
@@ -53,6 +56,7 @@ import router3 from '../HelloVue/router'
 import store5 from '../HelloVue/store'
 import SkyWay from '../skyWay/home.vue'
 
+Vue.use(CoolSelect)
 Vue.use(ElementUI, {locale})
 Vue.prototype.$http = (url, opts) => fetch(url, opts)
 

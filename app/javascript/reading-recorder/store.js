@@ -40,7 +40,7 @@ export default new Vuex.Store({
         [UPDATE_BOOK](state,payload){
             let b = this.getters.getBookById(payload.id)
             if(b){
-                //UPDATE
+                //bにpayloadをUPDATE
                 Object.assign(b,payload)
             }else{
                 //配列

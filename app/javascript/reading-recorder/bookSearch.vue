@@ -10,6 +10,12 @@
     </el-form>
   <BookInfo v-for="(b,i) of books" :linkable="true" :book="b" :index="i+1"  :key="b.id">
 </BookInfo>
+  <div style="height:700px;"></div>
+  <button @click="show = !show" class="btn btn-primary">切り替え</button>
+  <transition name="fade">
+  <p v-if="show">Hello Vue!!</p>
+  </transition>
+  <div style="height:700px;"></div>
 </div>
 </template>
 
@@ -20,7 +26,8 @@ export default {
     data:function(){
         return{
             keyword:"vuejs",
-            books:[]
+            books:[],
+            show:true
         }
     },
 methods: {
@@ -53,4 +60,22 @@ methods: {
 </script>
 
 <style scoped>
+.fade-enter{
+  opacity:1;
+}
+.fade-enter-active{
+  transition:opacity 5s;
+}
+.fade-enter-to{
+  opacity:0;
+}
+.fade-leave{
+opacity:0;
+}
+.fade-leave-active{
+  transition:opacity 5s;
+}
+.fade-leave-to{
+opacity:1;
+}
 </style>

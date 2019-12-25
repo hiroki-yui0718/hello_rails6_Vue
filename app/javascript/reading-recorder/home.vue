@@ -9,6 +9,8 @@
         :total="bookCount" :page-size="3" @current-change="onchange"></el-pagination>
     </div>
   </div>
+  <div style="height:700px;"></div>
+  <p id="behavior">Hello Vue!</p>
 </div>
 </template>
 

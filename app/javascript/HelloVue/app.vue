@@ -1,8 +1,13 @@
 <template>
 <div id="app">
+  <div class="row">
+    <div class="col-md-8">
     <h2 class="p-3 border-bottom">Vue.js</h2>
+     </div>
+     </div>
 <div class="row">
 <div class="col-md-4">
+    <Search></Search>
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -47,10 +52,14 @@
 </template>
 
 <script>
+import Search from './component/search.vue'
 export default {
+    components:{Search},
     data:function(){
         return{
-            isCollapse:true
+          form:[],
+            isCollapse:true,
+      selected: null,
         }
     },
     methods:{
@@ -59,7 +68,8 @@ export default {
         handleClose:function(){
 
         }
-    }
+    },
+
 }
 </script>
 

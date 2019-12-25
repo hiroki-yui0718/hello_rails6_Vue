@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {db} from '../packs/firebase'
+import {db} from '../packs/firebase';
 import { UPDATE_FORM,DELETE_FORM } from './mutation-types';
 import { mapActions,mapGetters } from 'vuex';
 export default {

@@ -29,6 +29,7 @@ export default new Vuex.Store({
             return state.form.length
         },
         allDesc(state){
+            state.list.length = 0
             state.form.some( function( value, index, array ) {
                 state.list.push(value['desc'])
             });

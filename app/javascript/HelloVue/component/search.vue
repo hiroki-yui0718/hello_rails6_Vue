@@ -1,5 +1,5 @@
 <template>
-  <div style="width:250px; height:10px;">
+  <div style="width:150px;">
     <cool-select v-model="selected" :items="allDesc" placeholder="Select name" />
   </div>
 </template>

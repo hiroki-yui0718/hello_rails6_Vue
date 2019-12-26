@@ -7,7 +7,6 @@
      </div>
 <div class="row">
 <div class="col-md-4">
-    <Search></Search>
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
@@ -42,6 +41,7 @@
         <i class="el-icon-setting"></i>
         <span>Navigator Four</span>
       </el-menu-item>
+          <Search class="ml-4 mt-2"></Search>
     </el-menu>
 </div>
 <div class="col-md-8">

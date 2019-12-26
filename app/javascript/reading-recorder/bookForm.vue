@@ -1,5 +1,5 @@
 <template>
-<div id="app" class="mt-3">
+<div  v-loading="loading" id="app" class="mt-3">
     <BookInfo :book="book"></BookInfo>
     <hr />
     <el-form ref="form" :model="form" :rules="rules" label-width="120px">
@@ -23,6 +23,7 @@ import {UPDATE_BOOK,UPDATE_CURRENT} from './mutation-types'
 export default {
     data:function(){
         return{
+            loading:true,
             form:{
                 read:new Date(),
                 memo:"",

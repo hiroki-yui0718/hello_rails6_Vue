@@ -1,5 +1,5 @@
 <template>
-<div id="app" class="mt-3">
+<div v-loading="loading" id="app" class="mt-3">
     <el-form :inline="true">
       <el-form-item>
         <el-input type="text" size="large" v-model="keyword"></el-input>
@@ -27,7 +27,8 @@ export default {
         return{
             keyword:"vuejs",
             books:[],
-            show:true
+            show:true,
+            loading:true
         }
     },
 methods: {

@@ -11,6 +11,7 @@
   </div>
   <div style="height:700px;"></div>
   <p id="behavior">Hello Vue!</p>
+  <p>No.{{id}}</p>
 </div>
 </template>
 
@@ -18,6 +19,7 @@
 import {mapGetters} from 'vuex'
 import BookInfo from './bookInfo.vue'
 export default {
+  props:['id'],
     data :function(){
       return{
         books:[]
